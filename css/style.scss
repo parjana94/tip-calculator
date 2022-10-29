@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+@import "config.scss";
+body {
+  background-color: hsl(185, 41%, 84%);
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  button {
+    cursor: pointer;
+  }
+  h1 {
+    color: hsla(180, 25%, 32%, 1);
+    text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 8px;
+    line-height: 40px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    text-align: center;
+  }
+  .active {
+    background-color: hsla(172, 67%, 45%, 1) !important;
+    color: hsla(183, 100%, 15%, 1) !important;
+  }
+  .main {
+    .container {
+      background-color: white;
+      padding: 32px;
+      box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
+      border-radius: 25px 25px 0px 0px;
+      .bill {
+        .bill-input-box {
+          h2 {
+            @include headersh2;
+          }
+          .input-box {
+            position: relative;
+            padding-bottom: 32px;
+            input {
+              @include inputfield;
+            }
+            input[type="number"] {
+              @include inputNumber;
+            }
+            .dollar {
+              @include inputIcon;
+            }
+          }
+        }
+        .tip-btns {
+          h2 {
+            @include headersh2;
+          }
+          .btns {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 17px;
+            .btn {
+              height: 48px;
+              font-family: "Space Mono";
+              font-style: normal;
+              font-weight: 700;
+              font-size: 24px;
+              line-height: 36px;
+              color: hsla(0, 0%, 100%, 1);
+              background-color: hsla(183, 100%, 15%, 1);
+              border: none;
+              transition: 0.5s;
+              &:hover {
+                background-color: hsla(173, 61%, 77%, 1);
+                color: hsla(183, 100%, 15%, 1);
+              }
+            }
+            #custom-percent {
+              @include inputfield;
+              width: 93%;
+              &::placeholder {
+                opacity: 1;
+                color: hsla(180, 18%, 40%, 1);
+              }
+            }
+            input[type="number"] {
+              @include inputNumber;
+            }
+          }
+        }
+        .ppl-numb {
+          .ppl-numb-text {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 32px;
+            h2 {
+              @include headersh2;
+            }
+            span {
+              font-family: "Space Mono";
+              font-style: normal;
+              font-weight: 700;
+              font-size: 16px;
+              line-height: 24px;
+              text-align: right;
+              color: hsla(13, 70%, 61%, 1);
+              padding-bottom: 6px;
+              display: none;
+            }
+          }
+          .ppl-input {
+            position: relative;
+            margin-bottom: 32px;
+            input {
+              @include inputfield;
+            }
+            .ppl-icon {
+              @include inputIcon;
+              top: 33%;
+            }
+            input[type="number"] {
+              @include inputNumber;
+            }
+          }
+        }
+      }
+      .result {
+        background-color: hsla(183, 100%, 15%, 1);
+        border-radius: 15px;
+        padding: 40px 24px 24px 24px;
+        h3 {
+          text-transform: capitalize;
+          font-size: 16px;
+          line-height: 24px;
+          color: white;
+          span {
+            font-size: 13px;
+            line-height: 19px;
+            color: hsla(183, 15%, 56%, 1);
+          }
+        }
+        .amount,
+        .total {
+          display: flex;
+          justify-content: space-between;
+          .result-number-box {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            h2 {
+              font-size: 32px;
+              line-height: 47px;
+              text-align: right;
+              letter-spacing: -0.666667px;
+              color: #26c2ae;
+            }
+            img {
+              height: 22px;
+            }
+          }
+        }
+        .amount {
+          margin-bottom: 25px;
+        }
+        .resset {
+          width: 100%;
+          margin-top: 35px;
+          margin-bottom: 25px;
+          height: 48px;
+          background-color: hsla(183, 78%, 24%, 1);
+          color: hsla(183, 100%, 15%, 1);
+          font-size: 20px;
+          line-height: 30px;
+          text-transform: uppercase;
+          border: none;
+          border-radius: 5px;
+          transition: 0.5s;
+        }
+      }
+    }
+  }
+}
+
+@include media-xl {
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      padding-bottom: 90px;
+    }
+    .main {
+      .container {
+        width: 920px;
+        box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
+        border-radius: 25px;
+        display: flex;
+        justify-content: space-between;
+        .bill,
+        .result {
+          width: 45%;
+        }
+        .result {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .bill {
+          .tip-btns {
+            .btns {
+              grid-template-columns: repeat(3, 1fr);
+            }
+          }
+        }
+      }
+    }
+  }
+}

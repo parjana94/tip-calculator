@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <h1>
+      spli <br />
+      tter
+    </h1>
+    <section class="main">
+      <div class="container">
+        <div class="bill">
+          <div class="bill-input-box">
+            <h2>bill</h2>
+            <div class="input-box">
+              <img class="dollar" src="images/icon-dollar.svg" alt="dollar" />
+              <input type="number" name="" id="bill-input" placeholder="0" />
+            </div>
+          </div>
+          <div class="tip-btns">
+            <h2>select tip %</h2>
+            <div class="btns" id="buttons">
+              <button class="btn" id="5">5%</button>
+              <button class="btn" id="10">10%</button>
+              <button class="btn" id="15">15%</button>
+              <button class="btn" id="25">25%</button>
+              <button class="btn" id="50">50%</button>
+              <input
+                type="number"
+                name=""
+                id="custom-percent"
+                placeholder="Custom "
+                min="1"
+                max="100"
+                onkeyup="customPerc()"
+              />
+            </div>
+          </div>
+          <div class="ppl-numb">
+            <div class="ppl-numb-text">
+              <h2>number of people</h2>
+              <span id="error">Can't be zero</span>
+            </div>
+
+            <div class="ppl-input">
+              <img class="ppl-icon" src="images/icon-person.svg" alt="person" />
+              <input onkeyup="calculation()" type="number" id="ppl-number" />
+            </div>
+          </div>
+        </div>
+        <div class="result">
+          <div class="result-box">
+            <div class="amount">
+              <h3>
+                tip amount <br />
+                <span>/ person</span>
+              </h3>
+              <div class="result-number-box">
+                <img src="images/icon-dollar - green.svg" alt="dollar" />
+                <h2 class="amount-result">0.00</h2>
+              </div>
+            </div>
+            <div class="total">
+              <h3>
+                total <br />
+                <span>/ person</span>
+              </h3>
+              <div class="result-number-box">
+                <img src="images/icon-dollar - green.svg" alt="dollar" />
+                <h2 class="total-result">0.00</h2>
+              </div>
+            </div>
+          </div>
+          <button
+            onClick="window.location.reload(true)"
+            id="resetBtn"
+            class="resset"
+          >
+            reset
+          </button>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
